@@ -28,6 +28,7 @@ const AddComment = ({ asin }) => {
     setComment({ ...comment, elementId: asin });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [comment]);
+
   const sendComment = async (e) => {
     e.preventDefault();
     try {
@@ -51,6 +52,7 @@ const AddComment = ({ asin }) => {
       console.log("error");
     }
   };
+
   return (
     <div>
       <Form onSubmit={sendComment}>

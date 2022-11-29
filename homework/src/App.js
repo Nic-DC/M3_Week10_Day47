@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // import MyBadge from './components/MyBadge'
 // import SingleBook from './components/SingleBook'
 import BookList from "./components/BookList";
-import fantasyBooks from "./fantasyBooks.json";
+import fantasyBooks from "./books/fantasy.json";
 
 function App() {
   return (
