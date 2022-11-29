@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { Button, Form } from "react-bootstrap";
+
 const AddComment = ({ asin }) => {
   // state = {
   //   comment: {
@@ -24,17 +25,13 @@ const AddComment = ({ asin }) => {
   //     })
   //   }
   // }
-  useEffect(() => {
-    setComment({ ...comment, elementId: asin });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [comment]);
 
   const sendComment = async (e) => {
     e.preventDefault();
     try {
       let response = await fetch("https://striveschool-api.herokuapp.com/api/comments", {
         method: "POST",
-        body: JSON.stringify(comment),
+        body: JSON.stringify({ ...comment, elementId: asin }),
         headers: {
           "Content-type": "application/json",
           Authorization:

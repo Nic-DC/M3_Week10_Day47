@@ -14,7 +14,7 @@ const CommentArea = ({ asin }) => {
   const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
-  const fetchBooks = async () => {
+  const fetchComments = async () => {
     try {
       let response = await fetch("https://striveschool-api.herokuapp.com/api/comments/" + asin, {
         headers: {
@@ -46,10 +46,17 @@ const CommentArea = ({ asin }) => {
       setIsError(false);
     }
   };
+  // useEffect(() => {
+  //   if (isLoading === true) {
+  //     fetchComments();
+  //   }
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [asin, isLoading]);
+
   useEffect(() => {
-    fetchBooks();
+    fetchComments();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [comments]);
+  }, [asin]);
   // componentDidUpdate = async (prevProps) => {
   //   if (prevProps.asin !== this.props.asin) {
   //     this.setState({
