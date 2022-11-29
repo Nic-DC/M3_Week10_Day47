@@ -4,6 +4,7 @@ import Loading from "./Loading";
 import Error from "./Error";
 import { useState } from "react";
 import { useEffect } from "react";
+import SingleComment from "./SingleComment";
 const CommentArea = ({ asin }) => {
   // state = {
   //   comments: [], // comments will go here
